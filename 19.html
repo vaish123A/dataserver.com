@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include stdio.h> 
+            //Represent a node of the doubly linked list 
+           struct node{ 
+            int data; 
+            struct node *previous; 
+            struct node *next; 
+           }; 
+            
+           struct node *head, *tail = NULL; 
+           void addNode(int data) { 
+            struct node *newNode = (struct 
+           node*)malloc(sizeof(struct node)); 
+            newNode->data = data; 
+            if(head == NULL) { 
+            head = tail = newNode; 
+            head->previous = NULL; 
+            tail->next = NULL; 
+            } 
+            else { 
+            tail->next = newNode; 
+            newNode->previous = tail; 
+            tail = newNode; 
+            tail->next = NULL; 
+            } 
+           } 
+            
+           void display() { 
+            struct node *current = head; 
+            if(head == NULL) { 
+            printf("List is empty\n"); 
+            return; 
+            } 
+            printf("Nodes of doubly linked list: \n"); 
+            while(current != NULL) { 
+            if((current->data)%2!=0)
+            printf("%d ", current->data); 
+            current = current->next; 
+            } 
+           } 
+            
+           int main() 
+           { 
+            addNode(1); 
+            addNode(12); 
+            addNode(34); 
+            addNode(46); 
+            addNode(57); 
+            
+            display(); 
+            return 0; 
+            } 
+    </pre>
+</body>
+</html>

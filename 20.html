@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>#include
+        #include
+        #include
+        struct node
+        {
+        int data;
+        struct node *link;
+        }*head,*q,*temp,*t;
+        int cnt,num1,num2,m,n;
+        void create();
+        void display();
+        void swap();
+        int count();
+        void main()
+        {
+        int ch='y';
+        clrscr();
+        while(ch=='y'||ch=='Y')
+        {
+        create();
+        printf("\nWant to add another node(Y|N): ");
+        scanf("%s",& amp;ch);
+        }
+        display();
+        swap();
+        count();
+        display();
+        getch();
+        }
+        void create()
+        {
+        temp=malloc(sizeof(struct node));
+        printf("\nEnter the elements for singly linked 
+        list: ");
+        scanf("%d",& amp;temp-& gt;data);
+        temp-& gt;link=NULL;
+        if(head==NULL)
+        head=temp;
+        else
+        {
+        q=head;
+        while(q-& gt;link!=NULL)
+        {
+        q=q-& gt;link;
+        }
+        q-& gt;link=temp;
+        }
+        }
+        void display()
+        {
+        if(head==NULL)
+        printf("\nlinked list is empty");
+        else
+        {
+        printf("\nElement in singly linked list are: 
+        \n");
+        q=head;
+        while(q!=NULL)
+        {
+        printf("%d\n",q-& gt;data);
+        q=q-& gt;link;
+        }
+        }
+        }
+        void swap()
+        {
+        int i;
+        printf("\nEnter Mth and Nth position of singly 
+        linked list for swaping: ");
+        scanf("\n%d%d",& amp;m,& amp;n);
+        count();
+        if(m& gt;0& amp;& amp;m& lt;=cnt& amp;&amp
+        ;n& gt;0& amp;& amp;n& lt;=cnt)
+        {
+        q=head;
+        i=0;
+        printf("\n\nElement after swapping");
+        while(q!=NULL)
+        {
+        i++;
+        if(m==i)
+        q-& gt;data=num2;
+        if(n==i)
+        q-& gt;data=num1;
+        q=q-& gt;link;
+        }
+        }
+        else
+        printf("\nyou entered wrong position please 
+        try again");
+        }
+        int count()
+        {
+        cnt=0;
+        q=head;
+        while(q!=NULL)
+        {
+        cnt++;
+        if(cnt==m)
+        num1=q-& gt;data;
+        if(cnt==n)
+        num2=q-& gt;data;
+        q=q- & gt;link;
+        }
+        return cnt;
+        }</pre>
+</body>
+</html>

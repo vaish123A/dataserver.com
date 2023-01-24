@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre> #include  malloc.h>
+        #include  stdio.h>
+        #include  stdlib.h>
+        #include  string.h>
+        char* stack;
+        int top = -1;
+        void push(char ele)
+        {
+         stack[++top] = ele;
+        }
+        char pop()
+        {
+         return stack[top--];
+        }
+        int isPalindrome(char str[])
+        {
+         int length = strlen(str);
+         stack = (char*)malloc(length * 
+        sizeof(char));
+         int i, mid = length / 2;
+         for (i = 0; i < mid; i++) {
+         push(str[i]);
+         }
+         if (length % 2 != 0) {
+         i++;
+         }
+         while (str[i] != '\0') {
+         char ele = pop();
+         if (ele != str[i])
+         return 0;
+         i++;
+         }
+         return 1;
+        }
+        int main()
+        {
+         char str[] = "madam";
+         if (isPalindrome(str)) {
+         printf("Palindrome");
+         }
+         else {
+         printf("Not Palindrome");
+         }
+         return 0;
+        }</pre>
+</body>
+</html>

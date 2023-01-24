@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include stdio.h>
+            #include conio.h>
+            #define MAX 50
+            char a[MAX];
+            int top=-1;
+            void push(char c)
+            {
+            top++;
+            a[top]=c;
+            }
+            char pop()
+            {
+            char c;
+            c=a[top];
+            top--;
+            return c;
+            }
+            void main()
+            {
+            int i;
+            clrscr();
+            printf(“\n\nENTER THE STRING”);
+            gets(a);
+            for(i=0;a[i]!=‟ „; i++)
+            {
+            if(a[i]==‟ „)
+            {
+            while(top!=-1)
+            {
+            printf(“%c”,pop());
+            }
+            printf(“ “);
+            }
+            else
+            {
+            if(top==MAX-1)
+            {
+            printf(“\n\nSTACK IS FULL”);
+            }
+            else
+            {
+            push(a[i]);
+            }
+            }
+            }
+            while(top!=-1)
+            {
+            printf(“%c”,pop());
+            }
+            getch(); }
+    </pre>
+</body>
+</html>
